@@ -1,0 +1,9 @@
+#admin-menu-toggle {
+  color: white;
+  float: left;
+  padding: 5px;
+}
+
+#admin-menu-toggle:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,7 @@
+<?php
+
+function admin_menu_toggle_admin_menu_output_alter(&$content) {
+  $content['#prefix'] = str_replace('<div id="admin-menu-wrapper">',
+    '<div id="admin-menu-toggle" class="toggle-hide">[T]</div><div id="admin-menu-wrapper">',
+    $content['#prefix']);
+}
