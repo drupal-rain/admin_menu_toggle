@@ -5,9 +5,17 @@
  */
 function admin_menu_toggle_admin_menu_output_alter(&$content) {
   if (variable_get('admin_menu_toggle_on', TRUE)) {
-    $content['#prefix'] = str_replace('<div id="admin-menu-wrapper">',
-      '<div id="admin-menu-toggle" class="toggle-hide">[T]</div><div id="admin-menu-wrapper">',
-      $content['#prefix']);
+    if (variable_get('admin_menu_toggle_hide', FALSE) == FALSE) {
+      $content['#prefix'] = str_replace('<div id="admin-menu-wrapper">',
+        '<div id="admin-menu-toggle" class="toggle-hide">[T]</div><div id="admin-menu-wrapper">',
+        $content['#prefix']);
+    }
+    else {
+      $content['#prefix'] = str_replace('<div id="admin-menu-wrapper">',
+        '<div id="admin-menu-toggle" class="toggle-show">[T]</div><div id="admin-menu-wrapper" class="element-hidden">',
+        $content['#prefix']);
+      $content['#prefix'] = str_replace('<div id="admin-menu" class="', '<div id="admin-menu" class="admin-menu-transparent ', $content['#prefix']);
+    }
   }
 }
 
@@ -24,5 +32,10 @@ function admin_menu_toggle_form_admin_menu_theme_settings_alter(&$form, &$form_s
     '#type' => 'checkbox',
     '#title' => t('Turn on'),
     '#default_value' => variable_get('admin_menu_toggle_on', TRUE),
+  );
+  $form['toggle']['admin_menu_toggle_hide'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Hidden by default'),
+    '#default_value' => variable_get('admin_menu_toggle_hide', FALSE),
   );
 }
