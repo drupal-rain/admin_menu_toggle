@@ -8,10 +8,12 @@
       if ($(this).hasClass('toggle-show')) {
         $(this).removeClass("toggle-show").addClass("toggle-hide");
         $("#admin-menu-wrapper").removeClass("element-hidden");
+        $("#admin-menu").removeClass("admin-menu-transparent");
       }
       else if ($(this).hasClass('toggle-hide')) {
         $(this).removeClass("toggle-hide").addClass("toggle-show");
         $("#admin-menu-wrapper").addClass("element-hidden");
+        $("#admin-menu").addClass("admin-menu-transparent");
       }
     });
   }

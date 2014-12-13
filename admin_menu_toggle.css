@@ -7,3 +7,9 @@
 #admin-menu-toggle:hover {
   cursor: pointer;
 }
+
+#admin-menu.admin-menu-transparent,
+body.adminimal-menu div#admin-menu.admin-menu-transparent {
+  background-color: transparent;
+  border: none;
+}
