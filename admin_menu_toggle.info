@@ -2,7 +2,7 @@ name = Admin Menu Toggle
 description = Toggle show/hide the administration menu.
 core = 7.x
 package = Administration
-version = 7.x-0.2
+version = 7.x-0.3
 
 dependencies[] = admin_menu
 
