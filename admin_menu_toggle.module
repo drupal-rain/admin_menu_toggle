@@ -7,14 +7,14 @@ function admin_menu_toggle_admin_menu_output_alter(&$content) {
   if (variable_get('admin_menu_toggle_on', TRUE)) {
     if (variable_get('admin_menu_toggle_hide', FALSE) == FALSE) {
       $content['#prefix'] = str_replace('<div id="admin-menu-wrapper">',
-        '<div id="admin-menu-toggle" class="toggle-hide">[T]</div><div id="admin-menu-wrapper">',
+        '<div id="admin-menu-toggle" class="toggle-hide"></div><div id="admin-menu-wrapper">',
         $content['#prefix']);
     }
     else {
       $content['#prefix'] = str_replace('<div id="admin-menu-wrapper">',
-        '<div id="admin-menu-toggle" class="toggle-show">[T]</div><div id="admin-menu-wrapper" class="element-hidden">',
+        '<div id="admin-menu-toggle" class="toggle-show"></div><div id="admin-menu-wrapper" class="element-hidden">',
         $content['#prefix']);
-      $content['#prefix'] = str_replace('<div id="admin-menu" class="', '<div id="admin-menu" class="admin-menu-transparent ', $content['#prefix']);
+      $content['#prefix'] = str_replace('<div id="admin-menu" class="', '<div id="admin-menu" class="admin-menu-compress ', $content['#prefix']);
     }
   }
 }
