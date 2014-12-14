@@ -17,8 +17,8 @@
   cursor: pointer;
 }
 
-#admin-menu.admin-menu-compress,
-body.adminimal-menu div#admin-menu.admin-menu-compress {
+#admin-menu.admin-menu-compress {
   background-color: transparent;
   border: none;
+  width: 0;
 }
