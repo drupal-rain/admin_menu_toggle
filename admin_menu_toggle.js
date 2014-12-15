@@ -1,4 +1,5 @@
 (function($) {
+  
   // Initiate if not exist yet.
   Drupal.admin = Drupal.admin || {};
   Drupal.admin.behaviors = Drupal.admin.behaviors || {};
