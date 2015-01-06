@@ -1,6 +1,17 @@
 <?php
 
 /**
+ * Implements hook_page_alter().
+ */
+function admin_menu_toggle_page_build(&$page) {
+  // Fix the hidden top margin.
+  $page['page_bottom']['admin_menu_toggle']['#attached']['js'][] = array(
+    'data' => array('tableHeaderOffset' => 'Drupal.admin.toggleHeight'),
+    'type' => 'setting',
+  );
+}
+
+/**
  * Implements hook_admin_menu_output_alter().
  */
 function admin_menu_toggle_admin_menu_output_alter(&$content) {
