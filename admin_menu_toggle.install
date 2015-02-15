@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file admin_menu_toggle module install.
+ */
+
+/**
+ * @Implements hook_install().
+ */
+function admin_menu_toggle_install() {
+  // Set weight after admin_menu
+  $weight = db_select('system', 's')
+    ->fields('s', array('weight'))
+    ->condition('name', 'admin_menu', '=')
+    ->execute()
+    ->fetchField();
+
+  db_update('system')
+    ->fields(array('weight' => $weight + 1))
+    ->condition('type', 'module')
+    ->condition('name', 'admin_menu_toggle')
+    ->execute();
+}

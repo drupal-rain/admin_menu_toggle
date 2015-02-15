@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * @file admin_menu_toggle module main entry.
+ */
+
+/**
  * Implements hook_page_alter().
  */
 function admin_menu_toggle_page_build(&$page) {
